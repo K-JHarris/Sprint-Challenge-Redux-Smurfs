@@ -22,13 +22,19 @@
   Components can then read your store as, `state` and not `state.fooReducer`.
 */
 
-import { ADD_SMURFS, GET_SMURFS, FETCH, CREATING, FAILURE } from '../actions';
+import {
+  ADD_SMURFS,
+  GET_SMURFS,
+  FETCHING,
+  CREATING,
+  FAILURE
+} from "../actions";
 
 const initialState = {
   smurfs: [],
   fetchingSmurfs: false,
   addingSmurf: false,
-  error: `im giving her all shes got captain!` + err
+  error: `im giving her all shes got captain!`
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -39,7 +45,7 @@ const rootReducer = (state = initialState, action) => {
     case ADD_SMURFS:
       return { ...state, smurfs: [...action.payload] };
 
-    case FETCH:
+    case FETCHING:
       return { ...state, fetchingSmurfs: true };
 
     case CREATING:
